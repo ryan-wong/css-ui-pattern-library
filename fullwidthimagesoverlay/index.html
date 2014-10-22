@@ -5,7 +5,7 @@
 	<title>Full Width Images Overlay</title>
 </head>
 <style>
-	.bg-image {
+.bg-image {
   position: relative;
   background-color: rgba(0, 0, 0, 0.85);
 }
@@ -26,6 +26,27 @@
 
 </style>
 <body>
+<pre>
+  .bg-image {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.bg-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.bg-image .content {
+  position: absolute;
+  text-align: center;
+  top: 29%;
+  left: 0;
+  right: 0;
+  color: white;
+}
+
+</pre>
 <div class="header-image">
     <div class="row">                
 	    <div class="bg-image">
