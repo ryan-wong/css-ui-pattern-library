@@ -1,0 +1,128 @@
+// Helps keep all padding,borders inside box inside the box
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+//variables
+$gutter: 20px;
+$top-gutter: 20px;
+$desktop: 1140px;
+$tablet: 780px;
+$max-column: 12;
+
+[class*='large-'] {
+	float: left;
+	padding-right: $gutter; /* column-space */
+}
+
+/*Center grid and prevent overflow. Also force grid width to certain size*/
+.grid {
+	width: 100%;
+	max-width: $desktop;
+	margin: 0 auto; 
+	overflow: hidden;
+	
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+%grid-place {
+	width: 100%;
+	max-width: $desktop;
+	margin: 0 auto; 
+	overflow: hidden;
+	
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/*Add in outside padding to grid*/
+.grid-row {
+	padding-top: $top-gutter;
+	padding-left: $gutter; /* grid-space to left */
+	padding-right: 0px; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */
+}
+
+%grid-row-place {
+	padding-top: $top-gutter;
+	padding-left: $gutter; /* grid-space to left */
+	padding-right: 0px; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */
+}
+
+@for $i from 1 through $max-column{
+	.large-#{$i}{
+		width: percentage($i/$max-column);
+	}
+
+	.push-#{$i}{
+		margin-left: percentage($i/$max-column);
+	}
+}
+.large-1-5{
+	width: 20%;
+}
+
+.push-1-5{
+	margin-left: 20%;
+}
+
+@media handheld, only screen and (max-width: 780px) {
+	.grid {
+		width: 100%;
+		min-width: 0;
+		margin-left: 0px;
+		margin-right: 0px;
+		padding-left: $gutter; /* grid-space to left */
+		padding-right: $gutter/2; /* grid-space to right: (grid-space-left - column-space) e.g. 20px-10px=10px */
+	}
+	
+	[class*='large-'] {
+		width: auto;
+		float: none;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding-left: 0px;
+		padding-right: $gutter/2; /* column-space */
+	}	
+	
+	/* Mobile Layout */	
+	[class*='small-'] {
+		float: left;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		margin-bottom: 10px;
+		padding-left: 0px;
+		padding-right: $gutter/2; /* column-space */
+		padding-bottom: 0px;
+	}
+
+	@for $i from 1 through $max-column{
+		.small-#{$i}{
+			width: percentage($i/$max-column);
+		}
+
+		.push-#{$i}{
+			margin-left: percentage($i/$max-column);
+		}
+	}
+
+	.small-1-5{
+		width: 20%;
+	}
+
+	.hide-on-mobile {
+		display: none !important;
+		width: 0;
+		height: 0;
+	}
+}
