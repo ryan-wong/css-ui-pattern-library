@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Styled Select box</title>
+	<style>
+.styled-select select {
+   background: transparent;
+   width: 100%;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+.styled-select {
+  margin-top: 10px;
+  width: 80%;
+  height: 36px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 2px 2px 2px 2px;
+  border: 2px solid  #748e9e;
+  border-radius: 5px;
+  background: white url(arrow_down.png) no-repeat 90% 50%;
+}   
+.search-box{
+	width: 150px;
+}
+
+select#soflow-color{
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(15xvbd5.jpg), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+
+   color: #fff;
+   background-image: url(15xvbd5.jpg), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+   background-color: #779126;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding-left: 15px;
+}
+​
+</style>
+
+</head>
+<body>
+	<pre>
+	.styled-select select {
+	   background: transparent;
+	   width: 100%;
+	   padding: 5px;
+	   font-size: 16px;
+	   line-height: 1;
+	   border: 0;
+	   border-radius: 0;
+	   height: 34px;
+	   -webkit-appearance: none;
+	   }
+	.styled-select {
+	  margin-top: 10px;
+	  width: 80%;
+	  height: 36px;
+	  -webkit-appearance: none;
+	  -moz-appearance: none;
+	  appearance: none;
+	  padding: 2px 2px 2px 2px;
+	  border: 2px solid  #748e9e;
+	  border-radius: 5px;
+	  background: white url("arrow_down.png") no-repeat 90% 50%;
+	}   
+	</pre>
+   <div class="search-box">
+        <label for="province">PROVINCE</label>
+        <div class="styled-select">
+            <select id="province" name="province">
+    	        <option value="ON">ONTARIO</option>
+        	    <option value="AB">ALBERTA</option>
+            	<option value="BC">British Columbia</option>
+          		<option value="MB">Manitoba</option>
+          		<option value="NL">Newfoundland</option>
+          		<option value="NB">New Brunswick</option>
+          		<option value="NT">Northwest Territories</option>
+          		<option value="NS">Nova Scotia</option>
+          		<option value="QC">Quebec</option>
+          		<option value="PE">Prince Edward Island</option>
+          		<option value="SK">Saskatchewan</option>
+          		<option value="YT">Yukon</option>
+           </select>
+        </div>
+    </div>
+
+	<pre>
+select#soflow-color{
+   -webkit-appearance: button;
+   -webkit-border-radius: 2px;
+   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(15xvbd5.jpg), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 300px;
+
+   color: #fff;
+   background-image: url(15xvbd5.jpg), -webkit-linear-gradient(#779126, #779126 40%, #779126);
+   background-color: #779126;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   padding-left: 15px;
+}
+​
+	</pre>
+    <div class="search-box">
+    	<select id="soflow-color">
+		  <!-- This method is nice because it doesn't require extra div tags, but it also doesn't retain the style across all browsers. -->
+		  <option>Select an Option</option>
+		  <option>Option 1</option>
+		  <option>Option 2</option>
+		</select>
+    </div>
+</body>
+</html>
