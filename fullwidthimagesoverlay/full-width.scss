@@ -1,0 +1,18 @@
+@mixin full-image($overlay: false) {
+    position: relative;
+    if $overlay == true{
+        background-color: rgba(0, 0, 0, 0.85);
+    }    
+    img {
+        display: block;
+        width: 100%;
+        max-width: 100%; 
+        margin: 0 auto;
+    }
+}
+
+%full-image-content{
+    position: absolute;
+    left: 0;
+    right: 0;    
+}
