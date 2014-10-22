@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MultiBox Grid</title>
+</head>
+<body>
+	<style>
+		.box{
+			position: relative;
+			width: 20%;		/* desired width */
+		    background-color:red;
+		    float:left;    
+		  margin: 1%;
+		}	
+		.content{
+			position:  absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		  text-align:center;
+		     
+		}
+
+		/* Other ratios */
+		.ratio1_1:before{
+			content: "";
+			display: block;		
+			padding-top: 100%;
+		}
+		.ratio2_1:before{
+			content: "";
+			display: block;			
+			padding-top: 50%;
+		}
+		.ratio1_2:before{
+			content: "";
+			display: block;			
+			padding-top: 200%;
+		}
+		.ratio4_3:before{
+			content: "";
+			display: block;			
+			padding-top: 75%;
+		}
+		.ratio16_9:before{
+			content: "";
+			display: block;			
+			padding-top: 56.25%;
+		}
+		.examples{
+			clear: both;
+		}
+	</style>
+	<pre>
+	.box{
+		position: relative;
+		width: 20%;		/* desired width */
+		float:left;    		
+	}
+		
+	.content{
+		position:  absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	
+	     
+	}
+
+	/* Other ratios */
+	.ratio1_1:before{
+		content: "";
+		display: block;	
+		padding-top: 100%;
+	}
+	.ratio2_1:before{
+		content: "";
+		display: block;		
+		padding-top: 50%;
+	}
+	.ratio1_2:before{
+		content: "";
+		display: block;	
+		padding-top: 200%;
+	}
+	.ratio4_3:before{
+		content: "";
+		display: block;		
+		padding-top: 75%;
+	}
+	.ratio16_9:before{
+		content: "";
+		display: block;	
+		padding-top: 56.25%;
+	}
+</pre>
+	<div>
+	<section class="examples">
+	<h3>Examples (resize your browser to see the remaining ratios)</h3>
+	<div class="box ratio1_1">
+		<div class="content">Aspect ratio of <span>1:1</span></div>
+	</div>
+	<div class="box ratio2_1">
+		<div class="content">Aspect ratio of <span>2:1</span></div>
+	</div>
+	<div class="box ratio1_2">
+		<div class="content">Aspect ratio of <span>1:2</span></div>
+	</div>
+	<div class="box ratio4_3">
+		<div class="content">Aspect ratio of <span>4:3</span></div>
+	</div>
+	<div class="box ratio16_9">
+		<div class="content">Aspect ratio of <span>16:9</span></div>
+	</div>	
+</section>	
+	</div>
+
+</body>
+</html>
