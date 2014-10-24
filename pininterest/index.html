@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<a class="popup" href="https://pinterest.com/pin/create/button/?url=http://wrangler.ca/&media=http://wrangler.ca/wrangler/img/products/vintage_boot_cut/G8YEWPS_Side.jpg&description=All%20day,%20all%20night.%20Wrangler%20RED%20Jeans,%20now%20available%20in%20Canada.">Pin on Pinterest</a>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.popup').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'pinterest', opts);
+ 
+    return false;
+  });
+});
+</script>
+</body>
+</html>
