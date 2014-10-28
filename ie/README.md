@@ -4,7 +4,7 @@ IE solutions
 #ie8
 - When you have images that get chop off, use backstretch.js to fix them
 - Make sure all scripts are loaded before any script tags are placed on the page
-
+- Doesn't recognize rgba but rgb, to fix it, define rgb first then set the a
 Fixes IE
 ```
 <!--[if IE]>
