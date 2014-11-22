@@ -1,0 +1,330 @@
+
+/* Triangles */
+@mixin triangle-up($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-bottom: $size-arrow solid $color;
+    border-left: $size-side solid rgba(0, 0, 0, 0) ;
+    border-right: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+
+@mixin triangle-down($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-top: $size-arrow solid $color;
+    border-left: $size-side solid rgba(0, 0, 0, 0) ;
+    border-right: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+@mixin triangle-left($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-right: $size-arrow solid $color;
+    border-top: $size-side solid rgba(0, 0, 0, 0) ;
+    border-bottom: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+@mixin triangle-right($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-left: $size-arrow solid $color;
+    border-top: $size-side solid rgba(0, 0, 0, 0) ;
+    border-bottom: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+
+@mixin triangle-bottom-right($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-bottom: $size-arrow solid $color;
+    border-right: $size-arrow solid $color;
+    border-top: $size-side solid rgba(0, 0, 0, 0) ;
+    border-left: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+
+@mixin triangle-bottom-left($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-bottom: $size-arrow solid $color;
+    border-left: $size-arrow solid $color;
+    border-top: $size-side solid rgba(0, 0, 0, 0) ;
+    border-right: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+
+@mixin triangle-top-right($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-top: $size-arrow solid $color;
+    border-right: $size-arrow solid $color;
+    border-bottom: $size-side solid rgba(0, 0, 0, 0) ;
+    border-left: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+
+@mixin triangle-top-left($color: black, $size-arrow: 10px, $size-side: 10px) {
+    width: 0;
+    height: 0;
+    border-top: $size-arrow solid $color;
+    border-left: $size-arrow solid $color;
+    border-right: $size-side solid rgba(0, 0, 0, 0) ;
+    border-bottom: $size-side solid rgba(0, 0, 0, 0) ;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
+    -moz-transform: scale(.9999);
+}
+
+/* Oval */
+@mixin oval($size: 100px, $color: red) {
+  width: $size * 2;
+  height: $size;
+  background: $color;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+@mixin curve-down-arrow($arrow-head-size: 9px,
+ $arrow-head-color: red, $shaft-width: 3px,
+ $shaft-curve: 20px){
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: $arrow-head-size solid transparent;
+  border-right: $arrow-head-size solid $arrow-head-color;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+
+  &:after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: $shaft-width solid $arrow-head-color;
+    border-radius: 20px 0 0 0;
+    top: -12px;
+    left: -9px;
+    width: 12px;
+    height: 12px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+  }
+}
+
+@mixin trapazoid($color: red, $length: 100px){
+  border-bottom: $length solid $color;
+  border-left: $length / 2 solid rgba(0, 0, 0, 0) ;
+  border-right: $length/ 2 solid rgba(0, 0, 0, 0) ;
+  height: 0;
+  width: $length;
+}
+
+@mixin parallelogram($color: red, $width: 150px, $height: 100px){
+  width: $width;
+  height: $height;
+  -webkit-transform: skew(20deg);
+     -moz-transform: skew(20deg);
+       -o-transform: skew(20deg);
+  background: $color;
+}
+
+/*Six point star is a 2 triangles 1 inverted */
+@mixin star-six($color: red, $width: 100px){
+  width: 0;
+  height: 0;
+  border-left: $width / 2 solid rgba(0, 0, 0, 0);
+  border-right: $width / 2 solid rgba(0, 0, 0, 0);
+  border-bottom: $width solid $color;
+  position: relative;
+
+  &:after {
+  width: 0;
+  height: 0;
+  border-left: $width / 2 solid rgba(0, 0, 0, 0);
+  border-right: $width / 2 solid rgba(0, 0, 0, 0);
+  border-top: $width solid $color;
+  position: absolute;
+  content: "";
+  top: 30px;
+  left: -50px;
+  }
+}
+
+/* Heart */
+@mixin heart($color:red, $width:100px) {
+  position: relative;
+  width: $width;
+  height: $width* 0.9;
+
+  &:before,
+  &:after {
+      position: absolute;
+      content: "";
+      left: $width / 2;
+      top: 0;
+      width: $width / 2;
+      height: $width * 0.8;
+      background: $color;
+      -moz-border-radius: 50px 50px 0 0;
+      border-radius: 50px 50px 0 0;
+      -webkit-transform: rotate(-45deg);
+         -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+           -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      -webkit-transform-origin: 0 100%;
+         -moz-transform-origin: 0 100%;
+          -ms-transform-origin: 0 100%;
+           -o-transform-origin: 0 100%;
+              transform-origin: 0 100%;
+  }
+  &:after {
+      left: 0;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+      -webkit-transform-origin: 100% 100%;
+         -moz-transform-origin: 100% 100%;
+          -ms-transform-origin: 100% 100%;
+           -o-transform-origin: 100% 100%;
+              transform-origin :100% 100%;
+  }
+}
+
+@mixin infinity($color:red, $width:100px) {
+  position: relative;
+  width: $width + ($width*0.06);
+  height: $width / 2;
+
+  &:before,
+  &:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      width: $width * 0.3;
+      height: $width * 0.3;
+      border: $width * 0.1 solid $color;
+      -moz-border-radius: 50px 50px 0 50px;
+      border-radius: 50px 50px 0 50px;
+      -webkit-transform: rotate(-45deg);
+         -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+           -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+  }
+  &:after {
+      left: auto;
+      right: 0;
+      -moz-border-radius: 50px 50px 50px 0;
+      border-radius: 50px 50px 50px 0;
+      -webkit-transform: rotate(45deg);
+         -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+           -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+  }
+}
+
+@mixin speech($color: red, $width: 120px, $height: 80px){
+ width: $width;
+ height: $height;
+ background: $color;
+ position: relative;
+ -moz-border-radius:    10px;
+ -webkit-border-radius: 10px;
+ border-radius:         10px;
+
+  &:before {
+   content:"";
+   position: absolute;
+   right: 100%;
+   top: 26px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid $color;
+   border-bottom: 13px solid transparent;
+  }
+}
+
+@mixin magnify-glass($color: red,$font-size: 140px){
+ font-size: $font-size; /* This controls the size. */
+ display: inline-block;
+ width: $font-size * 0.4;
+ height: $font-size * 0.4;
+ border: $font-size * 0.1 solid $color;
+ position: relative;
+ border-radius: $font-size * 0.35;
+
+&:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: $font-size * -0.25;
+  bottom: $font-size * -0.1;
+  border-width: 0;
+  background: $color;
+  width: $font-size * 0.35;
+  height: $font-size * 0.08;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+}
+
+@mixin facebook-icon($color:red, $width:100px){
+
+background: $color;
+text-indent: -999em;
+width: $width;
+height: $width * 1.1;
+border-radius: 5px;
+position: relative;
+overflow: hidden;
+border: 15px solid $color;
+border-bottom: 0;
+
+  &::before {
+    content: "/20";
+    position: absolute;
+    background: $color;
+    width: $width * 0.4;
+    height: $width * 0.9;
+    bottom: $width * -0.3;
+    right: $width * -0.37;
+    border: $width * 0.2 solid #eee;
+    border-radius: $width * 0.25;
+  }
+  &::after {
+    content: "/20";
+    position: absolute;
+    width: $width* 0.55;
+    top: $width * 0.5;
+    height: $width * 0.2;
+    background: #eee;
+    right: $width * 0.05;
+  }
+}
+
+@mixin moon($color:blue, $width: 50px){
+width: $width;
+height: $width;
+border-radius: 50%;
+box-shadow: 15px 15px 0 0 red;
+
+}

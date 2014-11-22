@@ -4,6 +4,10 @@ IE solutions
 #ie8
 - When you have images that get chop off, use backstretch.js to fix them
 - Make sure all scripts are loaded before any script tags are placed on the page
+- doesnt support opacity very well. Use transparent like img as background in ie8
+- doesn't support border radius, use csspie3 with htc and js file
+- doesn't support media query so put desktop queries at the bottom
+
 
 Fixes IE
 ```

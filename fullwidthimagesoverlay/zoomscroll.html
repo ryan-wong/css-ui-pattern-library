@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+	$(window).scroll(function(){
+		var windowScroll = $(this).scrollTop();
+		$('.trike > div').css(function(){
+			'top','-' + windowScroll + 'px'
+			'left','-' + windowScroll + 'px'
+			'right','-' + windowScroll + 'px'
+		});
+
+	});
+	</script>
+	<style>
+	html,body{
+		height: 100%;
+		margin:0;
+		padding:0;
+		padding-bottom: 1000px;
+	}
+	.trike{
+		position: relative;
+		height: 70%;
+		width: 100%;
+	}
+
+	.trike div{
+		postion: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-image:url ('http://lorempixel.com/g/1400/800/');
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat; 
+	}
+	</style>
+</head>
+<body>
+	
+</body>
+</html>

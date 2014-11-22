@@ -1,0 +1,28 @@
+/* Lightbox modal */
+.lightbox-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.lightbox-container .lightbox{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #000;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.lightbox-container .lightbox * {
+  color:white;
+}

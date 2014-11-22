@@ -1,0 +1,24 @@
+.media-box {
+  padding: 5px;
+}
+.media-box:after{
+  content:"";
+  display:table;
+  clear: both;
+}
+
+.media-content{
+  padding-left: 5px;
+  max-width:400px;
+  word-wrap:break-word;
+}
+.media-img, .media-content{
+  display: table-cell;
+  vertical-align: top;
+}
+.media-middle{
+  vertical-align:middle;
+}
+.media-bottom{
+  vertical-align:bottom;
+}

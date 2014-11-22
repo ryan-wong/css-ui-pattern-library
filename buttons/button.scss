@@ -1,0 +1,33 @@
+@mixin button($padding: 6px 12px, $font-size: 14px,
+    $border-color:rgba(0,0,0,0),$block:false,
+    $active: false, $disabled: false){
+    @if $block{
+        display: block;
+        width: 100%;
+    }
+    @else{
+        display: inline-block;
+    }
+    padding: $padding;
+    vertical-align: middle;
+    font-size: $font-size;
+    text-align: center;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    text-decoration: none;
+
+    @if $active{
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.6);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.6);
+    }
+
+    @if $disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+    }
+}

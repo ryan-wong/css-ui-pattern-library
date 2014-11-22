@@ -1,0 +1,30 @@
+@mixin media($padding:5px, $content-right-padding:5px,
+  $content-width:400px, $img-size: 50px){
+  padding: $padding;
+  &:after{
+    content:"";
+    display:table;
+    clear: both;
+  }
+  .media-content{
+  padding-left: $content-right-padding;
+  max-width: $content-width;
+  word-wrap:break-word;
+  }
+
+  .media-img img{
+    width: $img-size;
+    height: $img-size;
+  }
+
+  .media-img, .media-content{
+    display: table-cell;
+    vertical-align: top;
+  }
+  .media-middle{
+    vertical-align:middle;
+  }
+  .media-bottom{
+    vertical-align:bottom;
+  }
+}

@@ -1,8 +1,28 @@
-@mixin box-grid($width : 20%){
+@mixin box-grid($width : 20%, $ratio: 1_1){
 	position: relative;
 	width: $width;
-	float:left;    		
+	float:left;
+
+	&::before{
+	 	content: "";
+		display: block;
+		@if $ratio == 2_1{
+			padding-top: 50%;
+		}
+		@else if $ratio == 4_3{
+			padding-top: 75%;
+		}
+		@else if $ratio == 1_2{
+			padding-top: 200%;
+		}
+		@else if $ratio == 16_9{
+			padding-top: 56.25%;
+		}
+		@else {
+			padding-top: 100%;
+		}
 	}
+}
 
 %box-content{
 	position: absolute;
@@ -10,45 +30,4 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-}
-
-/* Other ratios */
-%ratio1_1{
-	&::before{
-	  content: "";
-		display: block;
-		padding-top: 100%;
-	}
-}
-
-%ratio2_1{
-	&::before{
-	  content: "";
-		display: block;	  
-		padding-top: 50%;
-	}
-}
-
-%ratio4_3{
-	&::before{
-	  content: "";
-		display: block;	  
-		padding-top: 75%;
-	}
-}
-
-%ratio1_2{
-	&::before{
-	  content: "";
-		display: block;	  
-		padding-top: 200%;
-	}
-}
-
-%ratio16_9{
-	&::before{
-	  content: "";
-		display: block;	  
-		padding-top: 56.25%;
-	}
 }
