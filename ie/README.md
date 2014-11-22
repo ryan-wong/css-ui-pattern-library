@@ -8,7 +8,6 @@ IE solutions
 - doesn't support border radius, use csspie3 with htc and js file
 - doesn't support media query so put desktop queries at the bottom
 
-
 Fixes IE
 ```
 <!--[if IE]>
